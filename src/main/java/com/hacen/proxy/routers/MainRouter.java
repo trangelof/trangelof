@@ -38,11 +38,9 @@ public class MainRouter extends AbstractVerticle {
 		 HttpClient proxyClient = vertx.createHttpClient();
 
 		 HttpProxy httpProxy = HttpProxy.reverseProxy(proxyClient);
-		 //httpProxy.origin(7070, "localhost");
 		 httpProxy.origin(8181, "localhost");
 
 		 proxyRouter
-		   //.route(HttpMethod.GET, "/foo").handler(ProxyHandler.create(httpProxy));
 		 .route().handler(ProxyHandler.create(httpProxy));
 	 }
 
