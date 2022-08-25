@@ -1,0 +1,13 @@
+[Unit]
+Description=Proxy de Hacendalia
+
+[Service]
+WorkingDirectory=/opt/hacen/bin
+ExecStart=/usr/bin/java -jar HacenProxy.jar
+Type=simple
+Restart=on-failure
+TimeoutSec=10
+
+[Install]
+WantedBy=multi-user.target
+
